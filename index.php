@@ -1,21 +1,16 @@
-<?php
-    $daysWithoutSmoke = Load();
-
-    if(isset($_POST["answer"])){
-        if ($_POST["answer"] == "+")
-            $daysWithoutSmoke = 0;
-    }
-    else
-        $daysWithoutSmoke++;
-
-    echo "Ты не куришь ". $daysWithoutSmoke . " дней";
-    Save($daysWithoutSmoke);
-
-    function Load() : int
-    {
-        return 0;
-    }
-    function Save(int $days)
-    {
-
-    }
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kill Smoke</title>
+<meta charset="utf-8" />
+</head>
+<body>
+<h3>Форма ввода данных</h3>
+<form action="func.php" method="POST">
+    <p>Ты курил?</p>
+        <input type="radio" name="answer" value="+"/> + <br>
+        <input type="radio" name="answer" value="-"/> - <br>
+    <input type="submit" value="Отправить">
+</form>
+</body>
+</html>
