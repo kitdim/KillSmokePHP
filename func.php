@@ -9,7 +9,7 @@
             $daysWithoutSmoke++;
     }
 
-    echo "Ты не куришь ". $daysWithoutSmoke . " дней";
+    echo "Ты не куришь ". $daysWithoutSmoke . " ". CheckDays($daysWithoutSmoke);
     Save($daysWithoutSmoke);
 
     function Load() : int
@@ -37,4 +37,24 @@
         $file = fopen("data/days.txt", 'w+');
         fwrite($file, $days);
         fclose($file);
+    }
+
+    function CheckDays(int $days) : string
+    {
+        $result = "";
+
+        switch($days){
+            case 1:
+                $result = "день";
+                break;
+            case 2:
+            case 3:
+            case 4:
+                $result = "дня";
+                break;
+            default:
+                $result = "дней";
+                break;
+        }
+        return $result;
     }
