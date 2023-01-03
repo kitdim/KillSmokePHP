@@ -1,6 +1,5 @@
 <?php
     $daysWithoutSmoke = Load();
-
     if(isset($_POST["answer"])){
 
         if ($_POST["answer"] == "+")
